@@ -21,10 +21,10 @@ In this project, we'll create a Singleton class called `Singleton`
 ## Factory
 Factory pattern: This pattern allows you to create objects without exposing the creation logic to the client. It is useful when you want to create different types of objects based on some criteria it provides an interface for creating objects, but it allows subclasses to alter the type of objects that will be created.
 
- Contributing
+### Contributing
 If you would like to contribute to this project, feel free to fork the repository and submit a pull request with your changes.
 
-License
+### License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Replace `MohanedZekry` with your GitHub username if you want to publish this project on your GitHub repository. The code example above demonstrates a simple implementation of the Creational design patterns.
