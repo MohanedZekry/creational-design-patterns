@@ -8,7 +8,6 @@ Ensure you have Dart SDK installed on your system. Then, clone this repository:
 
 ```bash
 git clone https://github.com/MohanedZekry/creational-design-patterns.git
-cd singleton_example
 ```
 
 ## Table of Contents
