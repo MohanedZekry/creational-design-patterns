@@ -1,15 +1,13 @@
-class Singleton {
-  static Singleton? _instance;
+class SingletonV2 {
+  static SingletonV2? _instance;
   static final String _example = "Honda";
 
-  static Singleton getInstance() {
-    if (_instance != null) {
-      return _instance!;
-    }
-    return Singleton._internal();
+  factory SingletonV2.getInstance() {
+    _instance ??= SingletonV2._internal();
+    return _instance!;
   }
 
-  Singleton._internal();
+  SingletonV2._internal();
 
   static String get example => _example;
 
@@ -17,14 +15,32 @@ class Singleton {
   String toString() => "Hello, my name is $example.";
 }
 
-void main() {
-  var s = Singleton.getInstance();
-  var b = Singleton.getInstance();
-  print(s);
-  print(b);
+class Singleton {
+  Singleton._internal();
 
-  var singletonChecker = identical(s, b)
-      ? "We are both the same ${Singleton.example}."
-      : "We are NOT the same. I mean, just look at us.";
-  print(singletonChecker);
+  static Singleton? _instance;
+
+  factory Singleton() {
+    _instance ??= Singleton._internal();
+    return _instance!;
+  }
+
+  void printMessage() {
+    print("Singleton instance is working!");
+  }
+}
+
+void main() {
+  Singleton instance1 = Singleton();
+  Singleton instance2 = Singleton();
+
+  var a = SingletonV2.getInstance();
+  var b = SingletonV2.getInstance();
+
+  print(identical(instance1, instance2)); // Output: true
+
+  instance1.printMessage();
+  instance2.printMessage();
+
+  print(identical(a, b)); // Output: true
 }
